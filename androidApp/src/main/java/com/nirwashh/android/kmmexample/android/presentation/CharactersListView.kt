@@ -5,9 +5,13 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.nirwashh.android.kmmexample.android.presentation.CharactersViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
-fun CharactersListView() {
+fun CharactersListView(
+    viewModel: CharactersViewModel
+) {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {

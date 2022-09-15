@@ -1,4 +1,4 @@
-package com.nirwashh.android.kmmexample.android
+package com.nirwashh.android.kmmexample.android.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,6 +16,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.nirwashh.android.kmmexample.android.CharactersListView
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
 @Composable
 fun MyApplicationTheme(
@@ -56,6 +60,7 @@ fun MyApplicationTheme(
     )
 }
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +70,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    CharactersListView()
+                    CharactersListView(viewModel())
                 }
             }
         }
