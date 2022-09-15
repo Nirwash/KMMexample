@@ -1,5 +1,5 @@
 package com.nirwashh.android.kmmexample.network
 
 interface NetworkLayer {
-    suspend fun getCharacters()
+    suspend fun getCharacters(): CharacterResponse
 }
